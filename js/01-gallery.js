@@ -29,11 +29,17 @@ const galleryImgArr = document.querySelectorAll(".gallery__image");
 
 for (let i = 0; i < imagesArr.length; i++) { 
     galleryLinkArr[i].setAttribute("href", urlBigArr[i]);
-    console.log(galleryLinkArr[i]);
+    // console.log(galleryLinkArr[i]);
     galleryImgArr[i].src = urlSmallArr[i];
     galleryImgArr[i].setAttribute("data-source", urlBigArr[i]);
     galleryImgArr[i].setAttribute("alt", altDescriptionArr[i]);
 };
+
+galleryContainer.addEventListener("click", (event) => {
+    event.preventDefault();
+    // if (event.target.tagName !== "img") return;
+    console.log(event.target);
+});
 
 
 // const example = basicLightbox.create(document.querySelector(".gallery__image"));
