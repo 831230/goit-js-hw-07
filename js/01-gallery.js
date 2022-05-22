@@ -34,21 +34,21 @@ for (let i = 0; i < imagesArr.length; i++) {
     galleryImgArr[i].setAttribute("data-source", urlBigArr[i]);
     galleryImgArr[i].setAttribute("alt", altDescriptionArr[i]);
 };
-
+const imageDataValue = document.querySelector(img[data - source]);
 galleryContainer.addEventListener("click", (event) => {
-    event.preventDefault();
-    // if (event.target.tagName !== "img") return;
-    console.log(event.target);
+  event.preventDefault();
+  if (event.target.tagName !== "IMG") return;
+    console.log(event.target.dataset.source);
+    basicLightbox.create(event.target.dataset.source
+      ).show()
 });
 
-
-// const example = basicLightbox.create(document.querySelector(".gallery__image"));
-
-// document.querySelector(".gallery__link").onclick = () => { 
+    // const example = basicLightbox.create(document.querySelector(".gallery__image"));
+    // document.querySelector(".gallery__link").onclick = () => {
 //     basicLightbox.create(
-//       `<img src="https://cdn.pixabay.com/photo/2019/05/14/16/43/himilayan-blue-poppy-4202825_1280.jpg">`
+//         `<img src="https://cdn.pixabay.com/photo/2019/05/14/16/43/himilayan-blue-poppy-4202825_1280.jpg">`
 //     ).show()
-// }
+// };
 
 // const instance = basicLightbox.create(
 //   `<img src="https://cdn.pixabay.com/photo/2019/05/14/16/43/himilayan-blue-poppy-4202825_1280.jpg">`
