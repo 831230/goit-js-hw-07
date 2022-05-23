@@ -40,5 +40,8 @@ galleryContainer.addEventListener("click", (event) => {
   event.preventDefault();
   if (event.target.tagName !== "IMG") return;
 
-  basicLightbox.create(`<img src="${event.target.dataset.source}">`).show();
+    const lightbox = new SimpleLightbox(".gallery a", {
+      captionDelay: 250,
+      captionsData: "alt",
+    });
 });
